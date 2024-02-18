@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { FlatList } from 'react-native';
-import {Header} from '../../Header';
-import { Highlight } from '../../HighLight';
-import { GroupCard } from '../../GroupCard';
+import {Header} from '@components/Header';
+import { Highlight } from '@components/Highlight';
+import { GroupCard } from '@components/GroupCard';
+import { EmptyList } from '@components/EmptyList';
 import  * as S  from './styles';
 
 
 export function Groups() {
-  const [groups, setGroups] = useState<string[]>(['n00bs', 'Call of Duty', 'Forza', 'BF2'])
+  const [groups, setGroups] = useState<string[]>([])
 
 
   return (
@@ -24,9 +25,12 @@ export function Groups() {
      keyExtractor={item => item}
       renderItem={({item}) => (
         <GroupCard
-         title={item
-        }/>
+         title={item}
+         />
       )}
+
+      contentContainerStyle={groups.length === 0 && {flex: 1}}
+      ListEmptyComponent={() => <EmptyList message="Você ainda não tem gupos cadastrados!"/>}
     />
  
 	  
