@@ -4,6 +4,7 @@ import {Header} from '@components/Header';
 import { Highlight } from '@components/Highlight';
 import { GroupCard } from '@components/GroupCard';
 import { EmptyList } from '@components/EmptyList';
+import { Button } from '@components/Button';
 import  * as S  from './styles';
 
 
@@ -30,10 +31,19 @@ export function Groups() {
       )}
 
       contentContainerStyle={groups.length === 0 && {flex: 1}}
-      ListEmptyComponent={() => <EmptyList message="Você ainda não tem gupos cadastrados!"/>}
+      ListEmptyComponent={() => (
+         <EmptyList
+            message="Você ainda não tem gupos cadastrados!"
+            />
+      )}
     />
  
 	  
+        <Button
+          title={"Criar novo Squad"}
+        
+        />
+
 	</S.Container>
     
 
