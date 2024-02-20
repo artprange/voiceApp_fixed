@@ -18,7 +18,9 @@ export function NewGroup(){
                 subTitle="Crie um novo grupo para jogar com os noobs dos seus amigos!"
                 />
 
-                <Input />
+                <Input
+                placeholder="Nome do Squad"
+                 />
 
                 <Button
                 title="Criar novo grupo"
