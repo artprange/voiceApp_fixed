@@ -1,6 +1,7 @@
 import { Header } from "@components/Header";
 import { Container } from "./styles";
 import { Highlight } from "@components/Highlight";
+import { ButtonIcon } from "@components/ButtonIcon";
 
 
 export function Players() {
@@ -13,6 +14,9 @@ export function Players() {
             subTitle="Adicione os n00bs que você quer carregar"
         />
      
+    <ButtonIcon
+      title=""
+    />
     </Container>
   );
 }
