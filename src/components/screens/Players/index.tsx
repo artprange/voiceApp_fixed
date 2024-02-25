@@ -1,22 +1,26 @@
 import { Header } from "@components/Header";
-import { Container } from "./styles";
+import { Container, Form } from "./styles";
 import { Highlight } from "@components/Highlight";
 import { ButtonIcon } from "@components/ButtonIcon";
-
+import { Input } from "@components/Input";
 
 export function Players() {
-  return (
-    <Container>
-        <Header showBackButton/>
+	return (
+		<Container>
+			<Header showBackButton />
 
-        <Highlight
-             title="Squad"
-            subTitle="Adicione os n00bs que você quer carregar"
-        />
-     
-    <ButtonIcon
-      title=""
-    />
-    </Container>
-  );
+			<Highlight
+				title="Squad"
+				subTitle="Adicione os n00bs que você quer carregar"
+			/>
+			<Form>
+				<Input
+					placeholder="Digite o nome do jogador"
+					autoCorrect={false}
+				/>
+
+				<ButtonIcon icon="add" />
+			</Form>
+		</Container>
+	);
 }
