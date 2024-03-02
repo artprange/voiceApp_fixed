@@ -7,6 +7,8 @@ import { Input } from "@components/Input";
 import { Filter } from "@components/Filter";
 import { useState } from "react";
 import { PlayerCard } from "@components/PlayerCard";
+import { EmptyList } from "@components/EmptyList";
+import { Button } from "@components/Button";
 
 
 export function Players() {
@@ -57,8 +59,26 @@ export function Players() {
 				<PlayerCard name={item}
 				onRemove={()=>{}} />
 			)}
+
+
+			ListEmptyComponent={()=>(
+				<EmptyList
+				 message="Nenhum jogador adicionado"
+				  />
+			)}
+
 			
+
+			
+			showsHorizontalScrollIndicator={false}
+			contentContainerStyle={[{paddingBottom: 100},
+			player.length === 0 && {flex: 1}
+			]}
 			/>
+
+			<Button 
+			title="Remover n00bs"
+			type="SECONDARY"/>
 		</Container>
 	);
 }
