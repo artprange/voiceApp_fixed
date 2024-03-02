@@ -5,7 +5,7 @@ import { Groups } from "./src/components/screens/Groups";
 import theme from './src/theme'
 import { Loading } from "./src/components/Loading"
 import { StatusBar } from 'react-native';
-
+import { Routes } from './src/routes';
 
 
 
@@ -20,7 +20,7 @@ export default function App() {
         translucent
       
       />
-     { fontsLoaded ? <Groups /> : <Loading/> }
+     { fontsLoaded ? <Routes /> : <Loading/> }
     </ThemeProvider>
   );
 }
