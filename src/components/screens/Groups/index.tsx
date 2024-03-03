@@ -5,11 +5,15 @@ import { Highlight } from '@components/Highlight';
 import { GroupCard } from '@components/GroupCard';
 import { EmptyList } from '@components/EmptyList';
 import { Button } from '@components/Button';
+
 import  * as S  from './styles';
 
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([])
+  
+
+
 
 
   return (
@@ -41,6 +45,7 @@ export function Groups() {
 	  
         <Button
           title={"Criar novo Squad"}
+          onPress={handleNewGroup}
         
         />
 
