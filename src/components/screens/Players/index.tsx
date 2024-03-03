@@ -9,19 +9,26 @@ import { useState } from "react";
 import { PlayerCard } from "@components/PlayerCard";
 import { EmptyList } from "@components/EmptyList";
 import { Button } from "@components/Button";
+import { useRoute } from "@react-navigation/native";
+
+type RouteParams = {
+	group: string;
+}
 
 
 export function Players() {
 	const [team, setTeam] = useState("Time A");
+	const [player, setPlayer] = useState([]);
+	const route = useRoute();
+	const { group } = route.params as RouteParams;
 
-	const [player, setPlayer] = useState(["Bolo", "Bagunceira"]);
 
 	return (
 		<Container>
 			<Header showBackButton />
 
 			<Highlight
-				title="Squad"
+				title={group}
 				subTitle="Adicione os n00bs que você quer carregar"
 			/>
 			<Form>
